@@ -23,41 +23,56 @@ class SearchSection extends StatelessWidget {
         const SizedBox(height: 32),
         Container(
           width: 700,
-          decoration: BoxDecoration(color: AppColors.searchBar),
+          decoration: BoxDecoration(
+            color: AppColors.searchBar,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: AppColors.searchBarBorder, width: 1.5),
+          ),
           child: Column(
             children: [
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Search anything...",
-                  hintStyle: TextStyle(fontSize: 16, color: AppColors.textGrey),
-                  border: InputBorder.none,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Search anything...",
+                    hintStyle: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.textGrey,
+                    ),
+                    border: InputBorder.none,
+                    isDense: true,
+                    contentPadding: EdgeInsets.zero,
+                  ),
                 ),
               ),
-              Row(
-                children: [
-                  SearchBarButton(
-                    icon: Icons.auto_awesome_outlined,
-                    text: "Focus",
-                  ),
-                  const SizedBox(width: 12),
-                  SearchBarButton(
-                    icon: Icons.add_circle_outline_outlined,
-                    text: "Attach",
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: EdgeInsets.all(9),
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(27, 185, 206, 1),
-                      borderRadius: BorderRadius.circular(40),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    SearchBarButton(
+                      icon: Icons.auto_awesome_outlined,
+                      text: "Focus",
                     ),
-                    child: const Icon(
-                      Icons.arrow_forward,
-                      color: AppColors.background,
-                      size: 16,
+                    const SizedBox(width: 12),
+                    SearchBarButton(
+                      icon: Icons.add_circle_outline_outlined,
+                      text: "Attach",
                     ),
-                  ),
-                ],
+                    const Spacer(),
+                    Container(
+                      padding: EdgeInsets.all(9),
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(27, 185, 206, 1),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: const Icon(
+                        Icons.arrow_forward,
+                        color: AppColors.background,
+                        size: 16,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
