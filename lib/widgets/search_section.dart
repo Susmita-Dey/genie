@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:genie/pages/chat_page.dart';
 import 'package:genie/services/chat_web_service.dart';
 import 'package:genie/theme/colors.dart';
 import 'package:genie/widgets/search_bar_button.dart';
@@ -77,6 +78,14 @@ class _SearchSectionState extends State<SearchSection> {
                     GestureDetector(
                       onTap: () {
                         ChatWebService().chat(queryController.text.trim());
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder:
+                                (context) => ChatPage(
+                                  question: queryController.text.trim(),
+                                ),
+                          ),
+                        );
                       },
                       child: Container(
                         padding: EdgeInsets.all(9),
