@@ -28,6 +28,7 @@ class _SearchSectionState extends State<SearchSection> {
       children: [
         Text(
           "Where knowledge begins",
+          textAlign: TextAlign.center,
           style: GoogleFonts.ibmPlexMono(
             fontSize: 40,
             fontWeight: FontWeight.w400,
